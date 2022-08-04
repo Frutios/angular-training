@@ -1,0 +1,11 @@
+<mat-card>
+    <mat-card-title-group>
+        <mat-card-title>
+            Météo du jour
+        </mat-card-title>
+    </mat-card-title-group>
+    <mat-nav-list *ngIf="meteo$ | async as meteo" >
+        <h3 matLine>Température minimum : {{ meteo.daily.temperature_2m_min[0]}} {{ meteo.daily_units.temperature_2m_min }}</h3>
+        <h3 matLine>Température maximum : {{ meteo.daily.temperature_2m_max[0]}} {{ meteo.daily_units.temperature_2m_max }}</h3>
+    </mat-nav-list>
+</mat-card>

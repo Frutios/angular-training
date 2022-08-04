@@ -1,0 +1,27 @@
+import { Component, OnInit } from '@angular/core';
+import { Observable } from 'rxjs';
+import { Meteo } from '../../models/meteo.model';
+import { MeteoService } from '../../service/meteo.service';
+
+@Component({
+  selector: 'at-meteo',
+  templateUrl: './meteo.component.html',
+  styleUrls: ['./meteo.component.scss']
+})
+export class MeteoComponent implements OnInit {
+
+  meteo$!: Observable<Meteo>
+
+  constructor(private meteoService: MeteoService) { }
+
+
+  ngOnInit(): void {
+    this.meteoService.getMeteo()
+    this.initObservable()
+  }
+
+  initObservable() {
+    this.meteo$ = this.meteoService.meteo$
+  }
+
+}
