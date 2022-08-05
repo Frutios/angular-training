@@ -8,4 +8,11 @@
         <h3 matLine>Température minimum : {{ meteo.daily.temperature_2m_min[0]}} {{ meteo.daily_units.temperature_2m_min }}</h3>
         <h3 matLine>Température maximum : {{ meteo.daily.temperature_2m_max[0]}} {{ meteo.daily_units.temperature_2m_max }}</h3>
     </mat-nav-list>
+
+   <form >
+        <input [(ngModel)]="startDate" name="startDate" type="date">
+        <input [(ngModel)]="endDate" name="endDate" type="date">
+        <button (click)="sendDates()">Envoyer</button>
+   </form>
+   <div>{{ startDate }}</div>
 </mat-card>

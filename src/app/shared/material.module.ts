@@ -12,6 +12,9 @@ import { MatRadioModule } from "@angular/material/radio";
 import { MatProgressSpinnerModule } from '@angular/material/progress-spinner'
 import { MatSelectModule } from "@angular/material/select";
 import { MatExpansionModule } from '@angular/material/expansion';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatMomentDateModule } from '@angular/material-moment-adapter'
+
 
 
 
@@ -30,7 +33,10 @@ import { MatExpansionModule } from '@angular/material/expansion';
     MatRadioModule,
     MatProgressSpinnerModule,
     MatSelectModule,
-    MatExpansionModule
+    MatExpansionModule,
+    MatDatepickerModule,
+    MatMomentDateModule
+
   ]
 })
 export class MaterialModule { }

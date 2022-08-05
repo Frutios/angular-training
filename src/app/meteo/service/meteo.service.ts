@@ -1,5 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
+import * as moment from 'moment';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Meteo } from '../models/meteo.model';
 
@@ -15,9 +16,9 @@ export class MeteoService {
     return this._meteo$.asObservable()
   }
 
-  getMeteo() {
-    this.http.get<Meteo>("https://api.open-meteo.com/v1/forecast?latitude=47.39&longitude=0.72&timezone=UTC&daily=temperature_2m_max,temperature_2m_min").pipe(
-      tap(meteo => this._meteo$.next(meteo))
+  getMeteo(startDate: string, endDate: string) {
+    this.http.get<Meteo>(`https://api.open-meteo.com/v1/forecast?latitude=47.39&longitude=0.72&timezone=UTC&daily=temperature_2m_max,temperature_2m_min&start_date=${startDate}&end_date=${endDate}`).pipe(
+      tap(meteo => this._meteo$.next(meteo)),
     ).subscribe()
   }
 }
