@@ -1,4 +1,4 @@
-import { NgModule } from '@angular/core';
+import { CUSTOM_ELEMENTS_SCHEMA, NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { MeteoComponent } from './components/meteo/meteo.component';
 import { SharedModule } from '../shared/shared.module';
@@ -12,10 +12,10 @@ import { MeteoRoutingModule } from './meteo-routing.module';
   imports: [
     CommonModule,
     SharedModule,
-    MeteoRoutingModule
+    MeteoRoutingModule, 
   ],
   providers: [
-    MeteoService
-  ]
+    MeteoService,
+  ],
 })
 export class MeteoModule { }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as moment from 'moment';
+import moment from 'moment';
 import { Observable } from 'rxjs';
 import { Meteo } from '../../models/meteo.model';
 import { MeteoService } from '../../service/meteo.service';

@@ -1,6 +1,5 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import * as moment from 'moment';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Meteo } from '../models/meteo.model';
 
