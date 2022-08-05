@@ -4,15 +4,27 @@
             Météo du jour
         </mat-card-title>
     </mat-card-title-group>
-    <mat-nav-list *ngIf="meteo$ | async as meteo" >
-        <h3 matLine>Température minimum : {{ meteo.daily.temperature_2m_min[0]}} {{ meteo.daily_units.temperature_2m_min }}</h3>
-        <h3 matLine>Température maximum : {{ meteo.daily.temperature_2m_max[0]}} {{ meteo.daily_units.temperature_2m_max }}</h3>
+    <mat-nav-list *ngIf="meteo$ | async as meteo">
+        <h3 matLine>Température minimum : {{ meteo.daily.temperature_2m_min[0]}} {{ meteo.daily_units.temperature_2m_min
+            }}</h3>
+        <h3 matLine>Température maximum : {{ meteo.daily.temperature_2m_max[0]}} {{ meteo.daily_units.temperature_2m_max
+            }}</h3>
     </mat-nav-list>
 
-   <form >
-        <input [(ngModel)]="startDate" name="startDate" type="date">
-        <input [(ngModel)]="endDate" name="endDate" type="date">
-        <button (click)="sendDates()">Envoyer</button>
-   </form>
-   <div>{{ startDate }}</div>
+    <form>
+        <mat-form-field appearance="fill">
+            <mat-label>Entrer l'intervalle de date</mat-label>
+            <mat-date-range-input [rangePicker]="picker">
+                <input [(ngModel)]="startDate" matStartDate (dateChange)="onStartDateChange($event)" name="startDate" placeholder="Date de départ">
+                <input [(ngModel)]="endDate" matEndDate (dateChange)="onEndDateChange($event)" name="endDate" placeholder="Date de fin">
+            </mat-date-range-input>
+            <mat-hint>YYYY/MM/DD – YYYY/MM/DD</mat-hint>
+            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+            <mat-date-range-picker #picker></mat-date-range-picker>
+        </mat-form-field>
+        <button class="form-btn" mat-flat-button color="primary" (click)="sendDates()">Envoyer</button>
+    </form>
+
+
+    <div>{{ startDate }} {{ endDate }}</div>
 </mat-card>

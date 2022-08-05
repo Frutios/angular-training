@@ -17,7 +17,6 @@ export class MeteoComponent implements OnInit {
 
   constructor(private meteoService: MeteoService) { }
 
-
   ngOnInit(): void {
     this.meteoService.getMeteo(moment().format("YYYY-MM-DD"), moment().add(7).format("YYYY-MM-DD"))
     this.initObservable()
@@ -27,7 +26,15 @@ export class MeteoComponent implements OnInit {
     this.meteo$ = this.meteoService.meteo$
   }
 
-  sendDates(){
+  onStartDateChange(e: any){
+    this.startDate = e.target.value.format("YYYY-MM-DD")
+  }
+
+  onEndDateChange(e: any){
+    this.endDate = e.target.value.format("YYYY-MM-DD")
+  }
+
+  sendDates(){    
     this.meteoService.getMeteo(this.startDate, this.endDate)
   }
 }
