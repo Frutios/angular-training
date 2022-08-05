@@ -2,6 +2,8 @@ import { ComponentFixture, TestBed } from '@angular/core/testing';
 import { HttpClientTestingModule } from '@angular/common/http/testing'
 
 import { MeteoComponent } from './meteo.component';
+import { TranslateModule } from '@ngx-translate/core';
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 
 describe('MeteoComponent', () => {
   let component: MeteoComponent;
@@ -10,7 +12,8 @@ describe('MeteoComponent', () => {
   beforeEach(async () => {
     await TestBed.configureTestingModule({
       declarations: [ MeteoComponent ],
-      imports: [HttpClientTestingModule],
+      imports: [HttpClientTestingModule, TranslateModule.forRoot()],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 

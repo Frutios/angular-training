@@ -1,0 +1,16 @@
+{
+    "TITLE": "Angular Training",
+    "DATE": {
+        "INTERVAL_LABEL": "Enter date interval"
+    },
+    "METEO": {
+        "SUNRISE": "Sunrise",
+        "SUNSET": "Sunset",
+        "TITLE": "Weather of the day",
+        "MIN_TEMP": "Minimum temperature",
+        "MAX_TEMP": "Maximum temperature"
+    },
+    "ACTIONS" : {
+        "REFRESH": "Refresh"
+    }
+}

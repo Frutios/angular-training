@@ -1,0 +1,16 @@
+{
+    "TITLE": "Entrainement sur Angular",
+    "DATE": {
+        "INTERVAL_LABEL": "Entrez l'intervalle de date"
+    },
+    "METEO": {
+        "SUNRISE": "Lever de soleil",
+        "SUNSET": "Coucher de soleil",
+        "TITLE": "Météo du jour",
+        "MIN_TEMP": "Temperature minimum",
+        "MAX_TEMP": "Temperature maximum"
+    },
+    "ACTIONS" : {
+        "REFRESH": "Actualiser"
+    }
+}

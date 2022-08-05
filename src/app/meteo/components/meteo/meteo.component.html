@@ -1,16 +1,18 @@
 <mat-card>
     <mat-card-title-group>
         <mat-card-title>
-            Météo du jour
+            {{"METEO.TITLE" | translate}}
         </mat-card-title>
     </mat-card-title-group>
     <mat-nav-list *ngIf="meteo$ | async as meteo">
-        <h3 matLine>Température minimum : {{ meteo.daily.temperature_2m_min[0]}} {{ meteo.daily_units.temperature_2m_min
+        <h3 matLine>{{"METEO.MIN_TEMP" | translate}} : {{ meteo.daily.temperature_2m_min[0]}} {{ meteo.daily_units.temperature_2m_min
             }}</h3>
-        <h3 matLine>Température maximum : {{ meteo.daily.temperature_2m_max[0]}} {{ meteo.daily_units.temperature_2m_max
+        <h3 matLine>{{"METEO.MAX_TEMP" | translate}} : {{ meteo.daily.temperature_2m_max[0]}} {{ meteo.daily_units.temperature_2m_max
             }}</h3>
     </mat-nav-list>
-    <at-day-form (startDate)="onStartDateChange($event)" (endDate)="onEndDateChange($event)"></at-day-form>
     <at-sun [meteo$]="meteo$"></at-sun>
-    <button class="form-btn" mat-flat-button color="primary" (click)="sendDates()">Envoyer</button>
+    <div class="form">
+        <at-day-form (startDate)="onStartDateChange($event)" (endDate)="onEndDateChange($event)"></at-day-form>
+        <button class="form-btn" mat-flat-button color="primary" (click)="sendDates()">{{"ACTIONS.REFRESH" | translate}}</button>
+    </div>
 </mat-card>

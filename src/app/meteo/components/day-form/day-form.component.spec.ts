@@ -1,4 +1,6 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { TranslateModule } from '@ngx-translate/core';
 
 import { DayFormComponent } from './day-form.component';
 
@@ -8,7 +10,9 @@ describe('DayFormComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ DayFormComponent ]
+      declarations: [ DayFormComponent ],
+      imports: [TranslateModule.forRoot()],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 

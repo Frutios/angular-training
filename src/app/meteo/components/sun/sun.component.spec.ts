@@ -1,5 +1,5 @@
+import { NO_ERRORS_SCHEMA } from '@angular/core';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
-
 import { SunComponent } from './sun.component';
 
 describe('SunComponent', () => {
@@ -8,7 +8,8 @@ describe('SunComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [ SunComponent ]
+      declarations: [ SunComponent],
+      schemas: [NO_ERRORS_SCHEMA]
     })
     .compileComponents();
 
