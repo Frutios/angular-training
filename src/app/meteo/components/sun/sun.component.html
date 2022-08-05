@@ -1,0 +1,4 @@
+<mat-nav-list *ngIf="meteo$ | async as meteo">
+    <h3 matLine>Lever de soleil : {{ meteo.daily.sunrise[0] | date : "HH:mm"}} </h3>
+    <h3 matLine>Coucher de soleil : {{ meteo.daily.sunset[0] | date : "HH:mm"}}</h3>
+</mat-nav-list>

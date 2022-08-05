@@ -1,7 +1,9 @@
 export class Meteo {
     daily!:{ 
         temperature_2m_min: Array<number>
-        temperature_2m_max:  Array<number>
+        temperature_2m_max: Array<number>
+        sunrise: Array<string>
+        sunset: Array<string>
     }
 
     daily_units!: {

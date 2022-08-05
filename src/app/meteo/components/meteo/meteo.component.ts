@@ -26,12 +26,14 @@ export class MeteoComponent implements OnInit {
     this.meteo$ = this.meteoService.meteo$
   }
 
-  onStartDateChange(e: any){
-    this.startDate = e.target.value.format("YYYY-MM-DD")
+  onStartDateChange(e: string){
+    console.log(e);
+    
+    this.startDate = e
   }
 
-  onEndDateChange(e: any){
-    this.endDate = e.target.value.format("YYYY-MM-DD")
+  onEndDateChange(e: string){
+    this.endDate = e
   }
 
   sendDates(){    
