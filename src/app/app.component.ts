@@ -9,6 +9,9 @@ import { TranslateService } from '@ngx-translate/core';
 export class AppComponent {
  constructor(translate: TranslateService){
   translate.setDefaultLang('fr')
-  translate.use('fr')
+  if (sessionStorage.getItem === null) {
+    sessionStorage.setItem("Language", "fr")
+  }
+  translate.use(sessionStorage.getItem("Language")!)
  }
 }
