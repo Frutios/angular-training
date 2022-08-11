@@ -10,10 +10,6 @@ export class AppComponent {
  constructor(translate: TranslateService){
   translate.addLangs(['fr', 'en'])
   translate.setDefaultLang('en');
-  if (sessionStorage.getItem === null) {
-    sessionStorage.setItem("Language", translate.getBrowserLang()!)
-  }
-  const browserLang = translate.getBrowserLang()!
-  translate.use(browserLang.match(/en|fr/) ? browserLang : 'en')
+  translate.use(sessionStorage.getItem('Language')!)
  }
 }

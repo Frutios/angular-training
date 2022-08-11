@@ -20,8 +20,6 @@ export class SettingComponent implements OnInit {
     } else {
       sessionStorage.setItem('Language', 'fr')
     }
-   window.location.reload()
+    this.translateService.use(sessionStorage.getItem('Language')!)
   }
-
-
 }

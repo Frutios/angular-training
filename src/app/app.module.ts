@@ -7,6 +7,7 @@ import { MeteoModule } from './meteo/meteo.module';
 import { HttpClient, HttpClientModule } from '@angular/common/http';
 import { TranslateLoader, TranslateModule, TranslateService } from '@ngx-translate/core';
 import { TranslateHttpLoader } from '@ngx-translate/http-loader';
+import { CoreModule } from './core/core.module';
 
 export function HttpLoaderFactory(http: HttpClient) {
   return new TranslateHttpLoader(http)
@@ -23,6 +24,7 @@ export function HttpLoaderFactory(http: HttpClient) {
     HttpClientModule,
     BrowserAnimationsModule,
     MeteoModule,
+    CoreModule,
     TranslateModule.forRoot({
       defaultLanguage: 'en',
       loader: {
