@@ -3,9 +3,7 @@ import { Injectable } from '@angular/core';
 import { BehaviorSubject, Observable, tap } from 'rxjs';
 import { Meteo } from '../models/meteo.model';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class MeteoService {
 
   constructor(private http: HttpClient) { }

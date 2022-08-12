@@ -6,12 +6,14 @@ import { MeteoService } from './service/meteo.service';
 import { MeteoRoutingModule } from './meteo-routing.module';
 import { SunComponent } from './components/sun/sun.component';
 import { DayFormComponent } from './components/day-form/day-form.component';
+import { HeatWaveComponent } from './components/heat-wave/heat-wave.component';
 
 @NgModule({
   declarations: [
     MeteoComponent,
     SunComponent,
-    DayFormComponent
+    DayFormComponent,
+    HeatWaveComponent
   ],
   imports: [
     CommonModule,
